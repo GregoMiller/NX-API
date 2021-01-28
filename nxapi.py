@@ -37,3 +37,27 @@ cookies={}
 cookies['APIC-cookie']=token
 
 print(token)
+
+counter = 0
+
+nei_count = response['ins_api']['outputs']['output']['body']['neigh_count']
+
+print(nei_count)
+
+while counter < nei_count:
+    hostname = response['ins_api']['outputs']['output']['body']['Table_cdp_neighbor_brief_info']['ROW_cdp_neighbor_brief_info'][counter]['device_id']
+    local_int = response['ins_api']['outputs']['output']['body']['Table_cdp_neighbor_brief_info']['ROW_cdp_neighbor_brief_info'][counter]['intf_id']
+    remote_int = response['ins_api']['outputs']['output']['body']['Table_cdp_neighbor_brief_info']['ROW_cdp_neighbor_brief_info'][counter]['port_id']
+
+    #OUTPUT COPIADO DE SHOW CDP NEI CON REST CONFIG https://{{h}}/api/node/mo/sys/intf/phys-[eth1/1].json
+
+    body = {
+        "l1PhysIf":{
+            "attributes":{
+                "descr": 'Connected to '+hostname+' Remote if is '+remote_int
+            }
+        }
+    }
+
+    counter += 1
+    print (hostname)
