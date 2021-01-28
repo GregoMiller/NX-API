@@ -28,11 +28,11 @@ print(json.dumps(response, indent=2, sort_keys=True))
 
 ### LOGIN WITH NX-API REST #########
 
-auth_url = `https://192.168.1.37/api/mo/aaaLogin.json`
+auth_url = 'https://192.168.1.37/api/mo/aaaLogin.json'
 auth_body = {"aaaUser": {"attributes" : {"name": username, "pwd": password}}}
 
-auth_response = requests.post(auth_url,body=json.dumps(auth_body),timeout=5,verify=False).json()
-token = auth_response['imdata'][0]['aaaLogin']['attributes ']['token']
+auth_response = requests.post(auth_url, data=json.dumps(auth_body), timeout=5, verify=False).json()
+token = auth_response['imdata'][0]['aaaLogin']['attributes']['token']
 cookies={}
 cookies['APIC-cookie']=token
 
