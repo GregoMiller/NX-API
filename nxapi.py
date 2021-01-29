@@ -59,6 +59,15 @@ while counter < nei_count:
         }
     }
 
+   body2 = {
+        "l1PhysIf": {
+            "attributes": {
+                "accessVlan": "vlan-10",
+            }
+        }
+    }
+    
+
     counter += 1
     print (hostname)
 
@@ -70,11 +79,10 @@ while counter < nei_count:
         post_response = requests.post(int_url, data=json.dumps(
             body), headers=headers, cookies=cookies, verify=False).json()
         print(post_response)
+        post_response2 = requests.post(int_url, data=json.dumps(
+            body2), headers=headers, cookies=cookies, verify=False).json()
+        print(post_response2)
 
-   body2 ¿ 
-               "l1PhysIf": {
-                "attributes": {
-                    "accessVlan": "vlan-1",
 
 #{
 #  "aaaUser":{
@@ -82,5 +90,5 @@ while counter < nei_count:
 #      "name":"georgewa",
 #      "pwd":"paSSword1"
 #    }
-#  }ww
+#  }
 #}
