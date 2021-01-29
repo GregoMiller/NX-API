@@ -39,7 +39,6 @@ print(token)
 counter = 0
 
 nei_count = response['ins_api']['outputs']['output']['body']['neigh_count']
-
 print(nei_count)
 
 while counter < nei_count:
@@ -71,5 +70,13 @@ while counter < nei_count:
         post_response = requests.post(int_url, data=json.dumps(
             body), headers=headers, cookies=cookies, verify=False).json()
         print(post_response)
-        
-        
+
+
+#{
+#  "aaaUser":{
+#   "attributes":{
+#      "name":"georgewa",
+#      "pwd":"paSSword1"
+#    }
+#  }
+#}
