@@ -71,6 +71,10 @@ while counter < nei_count:
             body), headers=headers, cookies=cookies, verify=False).json()
         print(post_response)
 
+   body2 ¿ 
+               "l1PhysIf": {
+                "attributes": {
+                    "accessVlan": "vlan-1",
 
 #{
 #  "aaaUser":{
